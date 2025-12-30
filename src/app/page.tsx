@@ -2,6 +2,7 @@ import Header from "@/components/sections/header";
 import AboutSection from "@/components/sections/about";
 import Currently from "@/components/sections/currently";
 import WorkSection from "@/components/sections/work";
+import InterestsSection from "@/components/sections/interests";
 import Footer from "@/components/sections/footer";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <AboutSection />
       <Currently />
       <WorkSection />
+      <InterestsSection />
       <Footer />
     </main>
   );

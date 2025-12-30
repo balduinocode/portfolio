@@ -375,8 +375,11 @@ const getSemanticName = (node, mapContext, imageAliases) => {
 /* ───────────────────────────────────────────── Loader */
 function componentTagger(src, map) {
     const done = this.async();
+    const fs = require('fs');
     try {
         if (/node_modules/.test(this.resourcePath))
+            return done(null, src, map);
+        if (fs.existsSync(this.resourcePath) && fs.lstatSync(this.resourcePath).isDirectory())
             return done(null, src, map);
         const ast = (0, parser_1.parse)(src, {
             sourceType: 'module',
