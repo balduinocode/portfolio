@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #09090b;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #18181b;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #09090b;
+
+  --color-primary: #09090b;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f4f4f5;
+  --color-secondary-foreground: #18181b;
+
+  --color-muted: #f4f4f5;
+    --color-muted-foreground: #52525b;
+
+    --color-accent: #22c55e;
+    --color-accent-foreground: #ffffff;
+
+    --color-destructive: #ef4444;
+    --color-destructive-foreground: #ffffff;
+
+    --color-border: #e4e4e7;
+    --color-input: #e4e4e7;
+    --color-ring: #52525b;
+
+    --color-chart-1: #22c55e;
+    --color-chart-2: #eab308;
+    --color-chart-3: #3b82f6;
+    --color-chart-4: #a855f7;
+    --color-chart-5: #f43f5e;
+
+    --color-sidebar: #ffffff;
+    --color-sidebar-foreground: #52525b;
+    --color-sidebar-primary: #09090b;
+    --color-sidebar-primary-foreground: #ffffff;
+    --color-sidebar-accent: #f4f4f5;
+    --color-sidebar-accent-foreground: #18181b;
+    --color-sidebar-border: #e4e4e7;
+    --color-sidebar-ring: #52525b;
+
+    --color-widget-label: #52525b;
+    --color-folder-text: #3f3f46;
+    --color-status-green: #22c55e;
+
+  --animate-rainbow: rainbow 3s linear infinite;
+
+  @keyframes rainbow {
+    from {
+      background-position: 0% center;
+    }
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+
+@layer base {
+  .dark {
+    --color-background: #09090b;
+    --color-foreground: #ffffff;
+
+    --color-card: #09090b;
+    --color-card-foreground: #ffffff;
+
+    --color-popover: #09090b;
+    --color-popover-foreground: #ffffff;
+
+    --color-primary: #ffffff;
+    --color-primary-foreground: #09090b;
+
+    --color-secondary: #27272a;
+    --color-secondary-foreground: #ffffff;
+
+    --color-muted: #27272a;
+    --color-muted-foreground: #a1a1aa;
+
+    --color-border: #27272a;
+    --color-input: #27272a;
+    --color-ring: #a1a1aa;
+
+    --color-sidebar: #09090b;
+    --color-sidebar-foreground: #a1a1aa;
+    --color-sidebar-primary: #ffffff;
+    --color-sidebar-primary-foreground: #09090b;
+    --color-sidebar-accent: #27272a;
+    --color-sidebar-accent-foreground: #ffffff;
+    --color-sidebar-border: #27272a;
+    --color-sidebar-ring: #a1a1aa;
+  }
+}
+
+
+  @utility rainbow-text {
+    background: linear-gradient(
+      to right,
+      #ef4444,
+      #f97316,
+      #eab308,
+      #22c55e,
+      #3b82f6,
+      #6366f1,
+      #a855f7,
+      #ef4444
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow 3s linear infinite;
+  }
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+}
